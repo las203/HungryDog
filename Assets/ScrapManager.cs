@@ -14,7 +14,7 @@ public class ScrapManager : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
-		if (Random.value < 0.009) {
+		if (Random.value < 0.01) {
 			SpawnScrap();
 			Debug.Log("Spawn random");
 		}
