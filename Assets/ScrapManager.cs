@@ -5,22 +5,19 @@ using System.Collections.Generic;
 public class ScrapManager : MonoBehaviour {
 
 	public GameObject scrapTypes;
-	public float spawnRate;
 	public List<Scrap> scrapList = new List<Scrap>();
+
 	GameManager gameManager;
 
 	void Start() {
 		gameManager = FindObjectOfType<GameManager>();
-		InvokeRepeating("SpawnScrap", 0, spawnRate);
 	}
 
 	void FixedUpdate() {
-		/*if (gameManager.level >= 7) {
-			if (Random.value < 0.01) {
-				SpawnScrap();
-				Debug.Log("Spawn random");
-			}
-		}*/
+		if (Random.value < 0.009) {
+			SpawnScrap();
+			Debug.Log("Spawn random");
+		}
 	}
 
 	private int ChooseScrap() {

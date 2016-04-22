@@ -16,6 +16,10 @@ public class PlayerController : MonoBehaviour {
 
 	void FixedUpdate () {
 		rb.AddForce(Vector2.right * Input.GetAxis("Horizontal") * speed);
+		if (rb.velocity.x < 0)
+			this.transform.localScale = new Vector3(-5, 5, 1);
+		else
+			this.transform.localScale = new Vector3(5, 5, 1);
 		//transform.Translate(Input.GetAxis("Horizontal") * speed, 0, 0);
 		/*if (this.transform.position.x <= -6 && rb.velocity.magnitude < 0) {
 			this.transform.position.Set(-6, this.transform.position.y, 0);
